@@ -10,7 +10,7 @@ import java.util.List;
 @Setter
 public class Nodo<T, N extends Nodo<T, N>> {
     private T valor;
-    private List<N> adyacentes;
+    private List<N> adyacentes = new ArrayList<>();
     private int tiempoDescubrimiento;
     private int tiempoFinalizacion;
 
@@ -28,4 +28,13 @@ public class Nodo<T, N extends Nodo<T, N>> {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Nodo{" +
+                "valor=" + valor +
+                '}';
+    }
+    public void imprimir(){
+        System.out.println(this.toString());
+    }
 }

@@ -18,21 +18,22 @@ public class Busqueda {
                 dfsRecursiva(n);
             }
         }
+
     }
 
     private static <T> void dfsRecursiva(NodoColor<T> nodo){
         nodo.setColor("Amarillo");
         tiempo++;
         nodo.setTiempoDescubrimiento(tiempo);
-
+        System.out.println("El nodo "+ nodo.getValor() + " se dedscubrio a los " + tiempo + " y el color es: " + nodo.getColor());
         for(NodoColor<T> adyacente : nodo.getAdyacentes()){
             if(adyacente.getColor().equals("Blanco")){
                 dfsRecursiva(adyacente);
             }
         }
-
         nodo.setColor("Negro");
         tiempo++;
         nodo.setTiempoFinalizacion(tiempo);
+        System.out.println("El nodo "+ nodo.getValor() + " se dedscubrio a los " + tiempo + " y el color es: " + nodo.getColor());
     }
 }

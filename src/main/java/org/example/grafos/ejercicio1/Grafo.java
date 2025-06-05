@@ -2,6 +2,7 @@ package org.example.grafos.ejercicio1;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public abstract class Grafo <T, N extends Nodo<T, N>> {
     protected List<N> nodos = new ArrayList<>();
 
