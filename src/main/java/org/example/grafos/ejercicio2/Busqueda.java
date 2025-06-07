@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Busqueda {
+    private static int ciclos = 0;
 
     public static <T> void dfs(Grafo<T, NodoColor<T>> grafo){
         int tiempo = 0;
@@ -20,6 +21,7 @@ public class Busqueda {
                 dfsRecursiva(n, tiempo);
             }
         }
+        System.out.println("El grafo tiene " + ciclos + " ciclos.");
     }
 
     private static <T> void dfsRecursiva(NodoColor<T> nodo,  int tiempo){
@@ -29,14 +31,19 @@ public class Busqueda {
         nodo.setTiempoDescubrimiento(tiempo);
         System.out.println("El nodo "+ nodo.getValor() + " se dedscubrio a los " + tiempo + " y el color es: " + nodo.getColor());
         for(NodoColor<T> adyacente : nodo.getAdyacentes()){
-            if(adyacente.getColor().equals("Blanco")){
+            String color = adyacente.getColor();
+            if(color.equals("Blanco")){
                 dfsRecursiva(adyacente, tiempo);
+            } else if (color.equals("Amarillo")) {
+                System.out.println("Ciclo mas mas");
+                ciclos++;
             }
         }
         nodo.setColor("Negro");
         tiempo++;
         nodo.setTiempoFinalizacion(tiempo);
         System.out.println("El nodo "+ nodo.getValor() + " se termino a los " + tiempo + " y el color es: " + nodo.getColor());
+
     }
 
     public static <T> void bfs(Grafo<T, NodoColor<T>> grafo){
