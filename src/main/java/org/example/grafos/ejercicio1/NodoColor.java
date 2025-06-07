@@ -1,6 +1,5 @@
 package org.example.grafos.ejercicio1;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 

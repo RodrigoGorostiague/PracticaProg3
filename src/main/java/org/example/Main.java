@@ -44,6 +44,8 @@ public class Main {
 
 
         // Ejecutar DFS
-        Busqueda.dfs(grafo);
+        //Busqueda.dfs(grafo);
+        // Ejecutar BFS
+        Busqueda.bfs(grafo);
     }
 }
