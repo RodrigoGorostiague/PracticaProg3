@@ -43,7 +43,7 @@ public class Main {
          */
 
 
- /*
+
         GrafoDirigido<String, NodoColor<String>> grafoCiclico = new GrafoDirigido<>();
         NodoColor<String> nodoF = new NodoColor<>("F");
 
@@ -65,12 +65,12 @@ public class Main {
         grafoCiclico.agregarArista(nodoB, nodoE);
         grafoCiclico.agregarArista(nodoE, nodoF);
         grafoCiclico.agregarArista(nodoF, nodoA); // 🔁 Crea ciclo A → B → E → F → A
-*/
+
         // Ejecutar DFS
-        Busqueda.dfs(grafo);
+        Busqueda.dfs(grafo, Busqueda.Criterio.SIMPLE);
         //System.out.println("Grafo ciclico");
-        //Busqueda.dfs(grafoCiclico);
+        Busqueda.dfs(grafoCiclico, Busqueda.Criterio.CICLO);
         // Ejecutar BFS
-        //Busqueda.bfs(grafo);
+        Busqueda.bfs(grafo);
     }
 }

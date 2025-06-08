@@ -28,6 +28,8 @@ public class Nodo<T, N extends Nodo<T, N>> {
         }
     }
 
+
+
     @Override
     public String toString() {
         return "Nodo{" +
